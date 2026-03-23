@@ -299,7 +299,7 @@
             <span class="tag tag-yellow">반복업무 자동화</span>
           </div>
           <p class="animate d4" style="font-size:0.82rem; color:var(--text-secondary);">
-            ← → 키 또는 하단 버튼으로 이동 &nbsp;·&nbsp; 총 30슬라이드
+            ← → 키 또는 하단 버튼으로 이동 &nbsp;·&nbsp; 총 34슬라이드
           </p>
         </div>
       </section>
@@ -709,6 +709,94 @@
         </div>
       </section>
 
+      <!-- ========== NEW: WF1 - 실제 대화 흐름 ========== -->
+      <section class="slide type-content" id="s12-flow" aria-label="WF1 실제 대화 흐름">
+        <div class="slide-inner">
+          <span class="eyebrow animate">워크플로우 ① · 실제 대화 흐름</span>
+          <h2 class="animate d1">Claude Code와 <span style="color:var(--accent);">이렇게 대화합니다</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="grid-2 animate d2" style="gap:20px;">
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <div class="num-badge" style="flex-shrink:0;">1</div>
+                <div style="flex:1;">
+                  <div class="chat-prompt" style="font-size:0.78rem; padding:10px 14px;">
+                    <span class="chat-label">나</span>
+                    "폴더에 인원명부·휴가·근태 엑셀 3개 넣었어. 사번 기준으로 합치고 싶어. 필요한 정보 인터뷰해줘."
+                  </div>
+                </div>
+              </div>
+              <div style="padding-left:44px;">
+                <div class="card" style="font-size:0.78rem; padding:10px 14px; border-color:rgba(59,130,246,0.2); background:rgba(59,130,246,0.04); line-height:1.8;">
+                  <span style="font-size:0.68rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:3px;">Claude</span>
+                  "① 사번 컬럼명이 파일마다 동일한가요? ② 결과는 엑셀로 받을까요? ③ 자동 실행 주기가 있나요?"
+                </div>
+              </div>
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <div class="num-badge" style="flex-shrink:0;">2</div>
+                <div style="flex:1;">
+                  <div class="chat-prompt" style="font-size:0.78rem; padding:10px 14px;">
+                    <span class="chat-label">나</span>
+                    "컬럼명은 '사원번호'로 동일해. 결과는 엑셀로. 매주 월요일에 실행할거야."
+                  </div>
+                </div>
+              </div>
+              <div style="padding-left:44px;">
+                <div class="card" style="font-size:0.78rem; padding:10px 14px; border-color:rgba(59,130,246,0.2); background:rgba(59,130,246,0.04); line-height:1.8;">
+                  <span style="font-size:0.68rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:3px;">Claude</span>
+                  "이렇게 진행할게요 → ① 3파일 로드 → ② 사원번호 기준 병합 → ③ 전체_인사현황.xlsx 저장 → ④ README 작성. 진행할까요?"
+                </div>
+              </div>
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <div class="num-badge" style="flex-shrink:0;">3</div>
+                <div style="flex:1;">
+                  <div class="chat-prompt" style="font-size:0.78rem; padding:10px 14px;">
+                    <span class="chat-label">나</span>
+                    "좋아, 실행해줘."
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div style="padding-left:44px;">
+                <div class="card" style="font-size:0.78rem; padding:10px 14px; border-color:rgba(16,185,129,0.3); background:rgba(16,185,129,0.04); line-height:1.8;">
+                  <span style="font-size:0.68rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--positive); display:block; margin-bottom:3px;">Claude</span>
+                  "merge_hr.py, 전체_인사현황.xlsx, README.md 생성 완료했습니다."
+                </div>
+              </div>
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <div class="num-badge" style="flex-shrink:0;">4</div>
+                <div style="flex:1;">
+                  <div class="chat-prompt" style="font-size:0.78rem; padding:10px 14px;">
+                    <span class="chat-label">나</span>
+                    "결과 봤어. 연차잔여일이 0인 사람은 빨간 배경으로 표시해줘."
+                  </div>
+                </div>
+              </div>
+              <div style="padding-left:44px;">
+                <div class="card" style="font-size:0.78rem; padding:10px 14px; border-color:rgba(59,130,246,0.2); background:rgba(59,130,246,0.04); line-height:1.8;">
+                  <span style="font-size:0.68rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:3px;">Claude</span>
+                  "v1.1 업데이트 완료. 연차잔여일 0인 행 빨간색 강조 적용했습니다."
+                </div>
+              </div>
+              <div style="display:flex; gap:10px; align-items:flex-start;">
+                <div class="num-badge" style="flex-shrink:0;">5</div>
+                <div style="flex:1;">
+                  <div class="chat-prompt" style="font-size:0.78rem; padding:10px 14px;">
+                    <span class="chat-label">나</span>
+                    "완벽해. 팀원도 쓸 수 있게 슬랙 공유 메시지 초안도 써줘."
+                  </div>
+                </div>
+              </div>
+              <div class="callout" style="font-size:0.78rem; margin-top:4px;">
+                <strong>패턴 요약:</strong> 인터뷰 요청 → 답변 → 계획 확인 → 실행 → 보완<br>
+                <span style="color:var(--text-secondary);">모든 과정에서 코드를 직접 볼 필요가 없습니다.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ========== SLIDE 13: WF1 - 실제 예시 ========== -->
       <section class="slide type-content" id="s13" aria-label="엑셀 자동화 실제 예시">
         <div class="slide-inner">
@@ -914,6 +1002,59 @@
         </div>
       </section>
 
+      <!-- ========== NEW: WF2 - 단계별 프롬프트 패턴 ========== -->
+      <section class="slide type-content" id="s16-flow" aria-label="WF2 단계별 프롬프트 패턴">
+        <div class="slide-inner">
+          <span class="eyebrow animate">워크플로우 ② · 단계별 지시 패턴</span>
+          <h2 class="animate d1">설문 취합 <span style="color:var(--accent);">실제 대화 예시</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="animate d2" style="display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <div class="num-badge" style="flex-shrink:0;">1</div>
+              <div style="flex:1;">
+                <div class="chat-prompt" style="font-size:0.83rem;">
+                  <span class="chat-label">파악 먼저 요청</span>
+                  "폴더에 3월 주차별 설문 CSV 4개 넣었어. 전체 응답 취합해서 부서별 비교표 만들어줘. 시작 전에 파일 구조 파악하고 어떻게 처리할지 먼저 알려줘."
+                </div>
+                <div class="card" style="font-size:0.8rem; padding:10px 14px; margin-top:6px; border-color:rgba(59,130,246,0.2); background:rgba(59,130,246,0.04); line-height:1.8;">
+                  <span style="font-size:0.68rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:3px;">Claude</span>
+                  "CSV 4개 확인. 공통 컬럼: '부서', '문항1~5', '응답날짜'. 부서별 평균 점수 비교표 + 주차별 트렌드 표를 엑셀 2개 시트로 만들겠습니다. 진행할까요?"
+                </div>
+              </div>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <div class="num-badge" style="flex-shrink:0;">2</div>
+              <div style="flex:1;">
+                <div class="chat-prompt" style="font-size:0.83rem;">
+                  <span class="chat-label">확인 + 추가 요청</span>
+                  "좋아 진행해줘. 추가로 '불만족' 응답만 따로 뽑아서 세 번째 시트에 넣어줘. 불만족은 문항 점수가 2 이하인 경우야."
+                </div>
+                <div class="card" style="font-size:0.8rem; padding:10px 14px; margin-top:6px; border-color:rgba(16,185,129,0.3); background:rgba(16,185,129,0.04); line-height:1.8;">
+                  <span style="font-size:0.68rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--positive); display:block; margin-bottom:3px;">Claude</span>
+                  "survey_report.xlsx 완성. 시트 구성: ① 부서별 평균, ② 주차별 트렌드, ③ 불만족 응답(점수 ≤ 2)."
+                </div>
+              </div>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <div class="num-badge" style="flex-shrink:0;">3</div>
+              <div style="flex:1;">
+                <div class="chat-prompt" style="font-size:0.83rem;">
+                  <span class="chat-label">오류 수정</span>
+                  "파일 열었는데 날짜가 이상하게 나와." <span style="opacity:0.6; font-style:normal;">[스크린샷 첨부]</span>
+                </div>
+                <div class="card" style="font-size:0.8rem; padding:10px 14px; margin-top:6px; border-color:rgba(59,130,246,0.2); background:rgba(59,130,246,0.04); line-height:1.8;">
+                  <span style="font-size:0.68rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:3px;">Claude</span>
+                  "확인했습니다. CSV 날짜 형식이 MM/DD/YYYY였는데 YYYY-MM-DD로 통일해서 재생성했습니다."
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="callout-warn animate d3" style="margin-top:12px; font-size:0.82rem;">
+            <strong>팁:</strong> "파악하고 먼저 알려줘"로 시작하면 Claude가 실행 전 계획을 보고합니다. 원치 않는 방향이면 이 시점에 수정할 수 있습니다.
+          </div>
+        </div>
+      </section>
+
       <!-- ========== SLIDE 13: PDF ANALYSIS ========== -->
       <section class="slide type-content" id="s13" aria-label="PDF 계약서 분석">
         <div class="slide-inner">
@@ -972,6 +1113,59 @@
                 <span class="tag tag-purple" style="font-family:monospace; font-size:0.72rem;">openpyxl</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NEW: WF3 - 단계별 프롬프트 패턴 ========== -->
+      <section class="slide type-content" id="s17-flow" aria-label="WF3 PDF 분석 실제 대화">
+        <div class="slide-inner">
+          <span class="eyebrow animate">워크플로우 ③ · 단계별 지시 패턴</span>
+          <h2 class="animate d1">PDF 분석 <span style="color:var(--accent);">실제 대화 예시</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="animate d2" style="display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <div class="num-badge" style="flex-shrink:0;">1</div>
+              <div style="flex:1;">
+                <div class="chat-prompt" style="font-size:0.83rem;">
+                  <span class="chat-label">항목 파악 먼저</span>
+                  "폴더에 거래처 계약서 PDF 7개 넣었어. 먼저 파일들 훑어보고 공통으로 추출 가능한 항목이 뭐가 있는지 알려줘."
+                </div>
+                <div class="card" style="font-size:0.8rem; padding:10px 14px; margin-top:6px; border-color:rgba(59,130,246,0.2); background:rgba(59,130,246,0.04); line-height:1.8;">
+                  <span style="font-size:0.68rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:3px;">Claude</span>
+                  "7개 파일 확인. 공통 항목: 계약기간, 계약금액, 갱신조건, 위약금, 담당자명. 단, 일부 파일은 위약금 표기 방식이 달라 주의가 필요합니다."
+                </div>
+              </div>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <div class="num-badge" style="flex-shrink:0;">2</div>
+              <div style="flex:1;">
+                <div class="chat-prompt" style="font-size:0.83rem;">
+                  <span class="chat-label">범위 확정 + 조건 지정</span>
+                  "계약기간, 금액, 위약금 3개만 추출해서 엑셀로 만들어줘. 위약금이 20% 초과하면 빨간색으로 표시해줘."
+                </div>
+                <div class="card" style="font-size:0.8rem; padding:10px 14px; margin-top:6px; border-color:rgba(16,185,129,0.3); background:rgba(16,185,129,0.04); line-height:1.8;">
+                  <span style="font-size:0.68rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--positive); display:block; margin-bottom:3px;">Claude</span>
+                  "contract_comparison.xlsx 완성. B사(30%)·E사(25%) 2건을 빨간색으로 강조했습니다."
+                </div>
+              </div>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <div class="num-badge" style="flex-shrink:0;">3</div>
+              <div style="flex:1;">
+                <div class="chat-prompt" style="font-size:0.83rem;">
+                  <span class="chat-label">보완 요청</span>
+                  "B사 위약금이 '계약금액의 30%'로 나왔는데, 계약금액 기준으로 실제 금액도 옆에 계산해서 넣어줘."
+                </div>
+                <div class="card" style="font-size:0.8rem; padding:10px 14px; margin-top:6px; border-color:rgba(59,130,246,0.2); background:rgba(59,130,246,0.04); line-height:1.8;">
+                  <span style="font-size:0.68rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:3px;">Claude</span>
+                  "위약금 산출금액 컬럼 추가했습니다. B사: 800만 × 30% = 240만원으로 계산되어 있습니다."
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="callout animate d3" style="margin-top:12px; font-size:0.82rem;">
+            <strong>먼저 파악 → 그다음 지시:</strong> "추출 가능한 항목 먼저 알려줘"로 시작하면 Claude가 범위를 점검하고 예외사항도 미리 알려줍니다.
           </div>
         </div>
       </section>
@@ -1210,6 +1404,66 @@
               ✅ 이메일로 전송 가능<br>
               ✅ 슬랙으로 전송 가능<br>
               <span style="color:var(--text-secondary); font-size:0.82rem;">서버, 배포, 도메인 — 전혀 필요 없습니다.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NEW: WF4 - 전체 대화 흐름 ========== -->
+      <section class="slide type-content" id="s22-flow" aria-label="WF4 전체 대화 흐름">
+        <div class="slide-inner">
+          <span class="eyebrow animate">워크플로우 ④ · 처음부터 완성까지</span>
+          <h2 class="animate d1">고통 → PRD → 도구 <span style="color:var(--accent);">전체 대화 흐름</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="grid-2 animate d2" style="gap:20px;">
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <p style="font-size:0.72rem; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:2px;">Phase 1 — 기획 (PRD 만들기)</p>
+              <div class="chat-prompt" style="font-size:0.77rem; padding:9px 13px;">
+                <span class="chat-label">나</span>
+                "지원자 데이터에서 매번 특정 컬럼만 추출해서 형식 맞추는 작업이 반복돼. 웹 도구 만들고 싶어. PRD 만들기 위해 먼저 인터뷰해줘."
+              </div>
+              <div class="card" style="font-size:0.77rem; padding:9px 13px; border-color:rgba(59,130,246,0.2); background:rgba(59,130,246,0.04); line-height:1.8;">
+                <span style="font-size:0.67rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:3px;">Claude</span>
+                "어떤 파일 형식을 주로 쓰세요? 추출할 컬럼은 무엇인가요? 결과물은 어떤 형식으로 원하세요?"
+              </div>
+              <div class="chat-prompt" style="font-size:0.77rem; padding:9px 13px;">
+                <span class="chat-label">나</span>
+                "엑셀·CSV 둘 다. 이름·이메일·부서·직급. 결과는 엑셀로."
+              </div>
+              <div class="card" style="font-size:0.77rem; padding:9px 13px; border-color:rgba(59,130,246,0.2); background:rgba(59,130,246,0.04); line-height:1.8;">
+                <span style="font-size:0.67rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:3px;">Claude</span>
+                "PRD 작성했습니다. [기능 목록·UI 명세·완성 스펙 포함] 이 PRD로 HTML 도구를 만들까요?"
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <p style="font-size:0.72rem; font-weight:700; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:2px;">Phase 2 — 구현 & 보완</p>
+              <div class="chat-prompt" style="font-size:0.77rem; padding:9px 13px;">
+                <span class="chat-label">나</span>
+                "좋아, 만들어줘. README랑 CHANGELOG도 같이."
+              </div>
+              <div class="card" style="font-size:0.77rem; padding:9px 13px; border-color:rgba(16,185,129,0.3); background:rgba(16,185,129,0.04); line-height:1.8;">
+                <span style="font-size:0.67rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--positive); display:block; margin-bottom:3px;">Claude</span>
+                "datacleansing.html, README.md, CHANGELOG.md(v0.1) 생성 완료."
+              </div>
+              <div class="chat-prompt" style="font-size:0.77rem; padding:9px 13px;">
+                <span class="chat-label">나 + 스크린샷</span>
+                "파일 업로드하면 화면이 빈 화면이야. 이 스크린샷 봐줘."
+              </div>
+              <div class="card" style="font-size:0.77rem; padding:9px 13px; border-color:rgba(59,130,246,0.2); background:rgba(59,130,246,0.04); line-height:1.8;">
+                <span style="font-size:0.67rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:3px;">Claude</span>
+                "FileReader API 이벤트 핸들러 오류였습니다. 수정 완료했습니다."
+              </div>
+              <div class="chat-prompt" style="font-size:0.77rem; padding:9px 13px;">
+                <span class="chat-label">나</span>
+                "잘 돼. v0.2에는 필터 기능도 추가해줘."
+              </div>
+              <div class="card" style="font-size:0.77rem; padding:9px 13px; border-color:rgba(59,130,246,0.2); background:rgba(59,130,246,0.04); line-height:1.8;">
+                <span style="font-size:0.67rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:3px;">Claude</span>
+                "v0.2 업데이트 완료. 값 필터링 기능 추가, CHANGELOG 갱신했습니다."
+              </div>
+              <div class="callout" style="font-size:0.77rem; margin-top:2px;">
+                <strong>전체 흐름:</strong> 인터뷰 → PRD 확인 → 구현 → 오류 던지기 → 반복 → 완성
+              </div>
             </div>
           </div>
         </div>

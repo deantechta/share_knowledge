@@ -299,7 +299,7 @@
             <span class="tag tag-yellow">반복업무 자동화</span>
           </div>
           <p class="animate d4" style="font-size:0.82rem; color:var(--text-secondary);">
-            ← → 키 또는 하단 버튼으로 이동 &nbsp;·&nbsp; 총 34슬라이드
+            ← → 키 또는 하단 버튼으로 이동 &nbsp;·&nbsp; 총 52슬라이드
           </p>
         </div>
       </section>
@@ -1002,6 +1002,155 @@
         </div>
       </section>
 
+      <!-- ========== NEW: WF② - 다양한 응답 형식 처리 ========== -->
+      <section class="slide type-content" id="s16-responses" aria-label="WF② 다양한 응답 형식 처리">
+        <div class="slide-inner">
+          <span class="eyebrow animate">워크플로우 ② · 응답 형식 처리</span>
+          <h2 class="animate d1">주관식·복수선택도 <span style="color:var(--accent);">자동으로 정리</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="grid-2 animate d2" style="margin-bottom:18px;">
+            <div>
+              <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:12px;">가장 힘든 부분</p>
+              <div class="card" style="margin-bottom:14px;">
+                <p style="font-size:0.82rem; font-weight:700; margin-bottom:8px; color:var(--negative);">😤 주관식 응답 분류</p>
+                <p style="font-size:0.78rem; color:var(--text-secondary); line-height:1.8;">"너무 만족", "아주 좋음", "최고" → 모두 <strong style="color:var(--text);">"매우 만족"</strong>으로 통일해야 함</p>
+              </div>
+              <div class="card">
+                <p style="font-size:0.82rem; font-weight:700; margin-bottom:8px; color:var(--negative);">🔢 복수선택 집계</p>
+                <p style="font-size:0.78rem; color:var(--text-secondary); line-height:1.8;">"A, B, C" 형식을 각 항목별 집계로 변환</p>
+              </div>
+            </div>
+            <div>
+              <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:12px;">Claude Code가 하는 일</p>
+              <ul style="list-style:none; font-size:0.82rem; line-height:2.2;">
+                <li style="display:flex; align-items:flex-start; gap:10px;"><span style="color:var(--positive);">✅</span><div><strong>주관식 자동 분류</strong><br><span style="color:var(--text-secondary); font-size:0.75rem;">유사 응답 키워드 추출 후 카테고리 자동 배정</span></div></li>
+                <li style="display:flex; align-items:flex-start; gap:10px;"><span style="color:var(--positive);">✅</span><div><strong>복수선택 분리·집계</strong><br><span style="color:var(--text-secondary); font-size:0.75rem;">"A, B" → A: 1회, B: 1회로 자동 카운트</span></div></li>
+                <li style="display:flex; align-items:flex-start; gap:10px;"><span style="color:var(--positive);">✅</span><div><strong>이상값 탐지</strong><br><span style="color:var(--text-secondary); font-size:0.75rem;">중복 응답, 범위 벗어난 값 자동 플래그</span></div></li>
+              </ul>
+            </div>
+          </div>
+          <div class="chat-prompt animate d3" style="font-size:0.82rem;">
+            <span class="chat-label">프롬프트 예시</span>
+            "주관식 응답을 5개 카테고리로 자동 분류해줘. 유사한 의미는 같은 카테고리로 묶고, 각 카테고리별 빈도를 엑셀로 정리해줘. 복수선택 항목은 쉼표 기준으로 분리해서 각 항목별 집계도 만들어줘."
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NEW: WF② - 시각화 자동화 ========== -->
+      <section class="slide type-content" id="s16-viz" aria-label="WF② 시각화 자동화">
+        <div class="slide-inner">
+          <span class="eyebrow animate">워크플로우 ② · 시각화 자동화</span>
+          <h2 class="animate d1">분석 결과를 <span style="color:var(--accent);">차트와 리포트 HTML</span>로</h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="grid-2 animate d2">
+            <div>
+              <div class="callout" style="margin-bottom:14px; font-size:0.83rem;">
+                <strong>엑셀만으로 부족할 때</strong><br><br>
+                설문 결과를 <span class="hl-pos">경영진에게 보고</span>하거나<br>
+                <span class="hl-pos">팀 공유</span>가 필요한 경우,<br>
+                숫자 표만으로는 직관적이지 않습니다.
+              </div>
+              <div class="chat-prompt" style="font-size:0.78rem;">
+                <span class="chat-label">프롬프트 예시</span>
+                "이 설문 결과를 시각화해서 단일 HTML 리포트로 만들어줘. 부서별 만족도는 막대차트, 시간 추이는 라인차트, 핵심 인사이트는 카드 형태로."
+              </div>
+            </div>
+            <div>
+              <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:12px;">결과물 예시</p>
+              <div class="folder-vis">
+                <div class="folder-name">📁 3월_설문_리포트/</div>
+                <div class="folder-file active-f">📊 survey_analysis.xlsx</div>
+                <div class="folder-file special">📄 report.html ← 차트 포함 웹 리포트</div>
+                <div class="folder-file">📊 chart_satisfaction.png</div>
+                <div class="folder-file">📊 chart_trend.png</div>
+                <div class="folder-file special">📝 README.md</div>
+              </div>
+              <p style="font-size:0.78rem; color:var(--text-secondary); margin-top:12px; line-height:1.8;">
+                report.html을 브라우저로 열면<br>
+                <strong style="color:var(--text);">Chart.js 차트 + 인사이트 카드 + 원본 데이터 테이블</strong>이<br>
+                한 페이지에 정리되어 나옵니다.
+              </p>
+            </div>
+          </div>
+          <div class="callout-warn animate d3" style="margin-top:16px; font-size:0.82rem;">
+            <strong>팁:</strong> "다크모드 토글도 넣어줘" 하면 테마 전환 기능까지 추가됩니다. 발표자료로 바로 사용 가능합니다.
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NEW: WF② - 부서별 교차 분석 ========== -->
+      <section class="slide type-content" id="s16-analysis" aria-label="WF② 부서별 교차 분석">
+        <div class="slide-inner">
+          <span class="eyebrow animate">워크플로우 ② · 고급 분석</span>
+          <h2 class="animate d1">부서별·직급별 <span style="color:var(--accent);">교차 분석</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="animate d2" style="margin-bottom:18px;">
+            <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:14px;">단순 집계를 넘어 패턴 발견하기</p>
+            <div class="flow-row">
+              <div class="flow-step">
+                <div class="flow-step-icon">📋</div>
+                <div class="flow-step-title">원본 데이터</div>
+                <div class="flow-step-desc">부서, 직급<br>응답 데이터</div>
+              </div>
+              <div class="flow-step" style="background:rgba(59,130,246,0.07);">
+                <div class="flow-step-icon">🔍</div>
+                <div class="flow-step-title">세그먼트 분리</div>
+                <div class="flow-step-desc">부서×직급<br>조합별 집계</div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step-icon">📊</div>
+                <div class="flow-step-title">비교 분석</div>
+                <div class="flow-step-desc">평균 대비<br>차이 계산</div>
+              </div>
+              <div class="flow-step" style="background:rgba(59,130,246,0.07);">
+                <div class="flow-step-icon">⚠️</div>
+                <div class="flow-step-title">이상 패턴 발견</div>
+                <div class="flow-step-desc">특정 그룹<br>낮은 만족도</div>
+              </div>
+              <div class="flow-step" style="border-color:rgba(16,185,129,0.3); background:rgba(16,185,129,0.06);">
+                <div class="flow-step-icon">💡</div>
+                <div class="flow-step-title">인사이트</div>
+                <div class="flow-step-desc">조치 필요<br>영역 식별</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2 animate d3">
+            <div class="card" style="font-size:0.78rem;">
+              <p style="font-weight:700; margin-bottom:10px; color:var(--text-secondary); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em;">교차 분석 출력 예시</p>
+              <table style="width:100%; border-collapse:collapse; font-size:0.75rem;">
+                <tr style="border-bottom:1px solid var(--border);">
+                  <th style="padding:6px 8px; text-align:left; color:var(--text-secondary);">세그먼트</th>
+                  <th style="padding:6px 8px; text-align:left; color:var(--text-secondary);">평균 점수</th>
+                  <th style="padding:6px 8px; text-align:left; color:var(--text-secondary);">전체 대비</th>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                  <td style="padding:6px 8px;">HR·사원</td>
+                  <td style="padding:6px 8px; color:var(--positive);">4.2</td>
+                  <td style="padding:6px 8px; color:var(--positive);">+0.3</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                  <td style="padding:6px 8px;">WO·대리</td>
+                  <td style="padding:6px 8px; color:var(--negative);">3.1</td>
+                  <td style="padding:6px 8px; color:var(--negative);">-0.8 ⚠️</td>
+                </tr>
+                <tr>
+                  <td style="padding:6px 8px;">Finance·과장</td>
+                  <td style="padding:6px 8px;">3.9</td>
+                  <td style="padding:6px 8px;">±0.0</td>
+                </tr>
+              </table>
+            </div>
+            <div class="callout" style="font-size:0.83rem;">
+              <strong>Claude가 자동으로:</strong><br><br>
+              ✅ 평균 대비 ±0.5 이상 차이 나는 그룹 플래그<br>
+              ✅ 응답 수가 5개 미만인 그룹은 통계적 신뢰도 주의 표시<br>
+              ✅ 부서×직급 피벗 테이블 자동 생성<br><br>
+              <span style="color:var(--text-secondary); font-size:0.78rem;">"교차 분석 결과에서 주목할 세그먼트 3개 추천해줘"까지 요청 가능</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ========== NEW: WF2 - 단계별 프롬프트 패턴 ========== -->
       <section class="slide type-content" id="s16-flow" aria-label="WF2 단계별 프롬프트 패턴">
         <div class="slide-inner">
@@ -1111,6 +1260,222 @@
                 <span class="tag tag-blue" style="font-family:monospace; font-size:0.72rem;">pdfplumber</span>
                 <span class="tag tag-blue" style="font-family:monospace; font-size:0.72rem;">pandas</span>
                 <span class="tag tag-purple" style="font-family:monospace; font-size:0.72rem;">openpyxl</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NEW: WF③ - 근로계약서 자동 비교 ========== -->
+      <section class="slide type-content" id="s17-contract" aria-label="WF③ 근로계약서 자동 비교">
+        <div class="slide-inner">
+          <span class="eyebrow animate">워크플로우 ③ · 근로계약서 비교</span>
+          <h2 class="animate d1">10개 계약서를 <span style="color:var(--accent);">한눈에 비교</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="grid-2 animate d2" style="margin-bottom:18px;">
+            <div>
+              <div class="callout-warn" style="margin-bottom:14px; font-size:0.83rem;">
+                <strong>실무 상황</strong><br><br>
+                계약 갱신 시즌마다 조건 변경 사항을 확인하려면<br>
+                <span class="hl-neg">PDF 10개를 일일이 열어서 비교</span>해야 했습니다.<br><br>
+                위약금 계산 조건도 제각각 → 놓치기 쉽습니다.
+              </div>
+              <div class="chat-prompt" style="font-size:0.78rem;">
+                <span class="chat-label">프롬프트 예시</span>
+                "이 폴더의 10개 근로계약서에서 계약기간·연봉·위약금 조건을 추출해서 비교표로 만들어줘. 위약금은 실제 금액도 계산해줘."
+              </div>
+            </div>
+            <div class="card" style="font-size:0.78rem;">
+              <p style="font-weight:700; margin-bottom:10px; color:var(--text-secondary); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em;">출력 예시</p>
+              <table style="width:100%; border-collapse:collapse; font-size:0.72rem;">
+                <tr style="border-bottom:1px solid var(--border);">
+                  <th style="padding:5px 7px; text-align:left; color:var(--text-secondary);">직원</th>
+                  <th style="padding:5px 7px; text-align:left; color:var(--text-secondary);">기간</th>
+                  <th style="padding:5px 7px; text-align:left; color:var(--text-secondary);">연봉</th>
+                  <th style="padding:5px 7px; text-align:left; color:var(--text-secondary);">위약금</th>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                  <td style="padding:5px 7px;">김민준</td>
+                  <td style="padding:5px 7px;">1년</td>
+                  <td style="padding:5px 7px;">4500만</td>
+                  <td style="padding:5px 7px;">10% (450만)</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                  <td style="padding:5px 7px;">이서연</td>
+                  <td style="padding:5px 7px;">2년</td>
+                  <td style="padding:5px 7px;">6000만</td>
+                  <td style="padding:5px 7px; color:var(--negative);">25% (1500만) ⚠️</td>
+                </tr>
+                <tr>
+                  <td style="padding:5px 7px;">박지훈</td>
+                  <td style="padding:5px 7px;">1년</td>
+                  <td style="padding:5px 7px;">5200만</td>
+                  <td style="padding:5px 7px;">15% (780만)</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="grid-2 animate d3">
+            <div class="callout" style="font-size:0.82rem;">
+              <strong>자동으로 체크하는 것들:</strong><br><br>
+              ✅ 위약금 비율 20% 초과 시 경고<br>
+              ✅ 계약 기간이 3개월 미만이면 플래그<br>
+              ✅ 금액 표기 방식 불일치 (3,000만 vs 30,000,000원)<br>
+              ✅ 조건부 위약금 (6개월 이내/이후 차등)
+            </div>
+            <div class="callout-warn" style="font-size:0.82rem;">
+              <strong>실전 활용:</strong><br><br>
+              "위약금 조건이 특이한 계약서 3개 알려줘"<br>
+              "이 중에서 재협상이 필요한 계약 추천해줘"<br><br>
+              <span style="color:var(--text-secondary); font-size:0.75rem;">단순 추출을 넘어 판단까지 요청 가능</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NEW: WF③ - 급여명세서 자동 집계 ========== -->
+      <section class="slide type-content" id="s17-payroll" aria-label="WF③ 급여명세서 자동 집계">
+        <div class="slide-inner">
+          <span class="eyebrow animate">워크플로우 ③ · 급여명세서 집계</span>
+          <h2 class="animate d1">급여명세서 PDF를<br><span style="color:var(--accent);">항목별 자동 합계</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="animate d2" style="margin-bottom:18px;">
+            <div class="flow-row">
+              <div class="flow-step">
+                <div class="flow-step-icon">📄</div>
+                <div class="flow-step-title">PDF 명세서</div>
+                <div class="flow-step-desc">직원별<br>급여 항목</div>
+              </div>
+              <div class="flow-step" style="background:rgba(59,130,246,0.07);">
+                <div class="flow-step-icon">🔍</div>
+                <div class="flow-step-title">항목 추출</div>
+                <div class="flow-step-desc">기본급, 수당<br>공제액 분리</div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-step-icon">📊</div>
+                <div class="flow-step-title">자동 집계</div>
+                <div class="flow-step-desc">항목별<br>합계 계산</div>
+              </div>
+              <div class="flow-step" style="background:rgba(59,130,246,0.07);">
+                <div class="flow-step-icon">⚠️</div>
+                <div class="flow-step-title">이상값 탐지</div>
+                <div class="flow-step-desc">평균 대비<br>±30% 플래그</div>
+              </div>
+              <div class="flow-step" style="border-color:rgba(16,185,129,0.3); background:rgba(16,185,129,0.06);">
+                <div class="flow-step-icon">📊</div>
+                <div class="flow-step-title">엑셀 저장</div>
+                <div class="flow-step-desc">정제된 표<br>즉시 사용</div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2 animate d3">
+            <div>
+              <div class="chat-prompt" style="margin-bottom:14px; font-size:0.82rem;">
+                <span class="chat-label">프롬프트 예시</span>
+                "이 폴더의 50명 급여명세서 PDF에서 기본급·시간외수당·공제액을 추출해서 엑셀로 만들어줘. 각 항목별 평균과 합계도 계산해줘."
+              </div>
+              <div class="callout" style="font-size:0.82rem;">
+                <strong>Claude가 처리하는 것:</strong><br><br>
+                ✅ PDF 50개 전문 자동 읽기<br>
+                ✅ 금액 표기 통일 (3,500,000 vs 350만원)<br>
+                ✅ 항목명 통일 (시간외 vs 초과근무)<br>
+                ✅ 합계 불일치 자동 감지<br>
+                ✅ 부서별 소계 자동 생성
+              </div>
+            </div>
+            <div class="card" style="font-size:0.77rem;">
+              <p style="font-weight:700; margin-bottom:10px; color:var(--text-secondary); font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em;">집계 결과 예시</p>
+              <table style="width:100%; border-collapse:collapse; font-size:0.72rem;">
+                <tr style="border-bottom:1px solid var(--border);">
+                  <th style="padding:5px 7px; text-align:left; color:var(--text-secondary);">항목</th>
+                  <th style="padding:5px 7px; text-align:right; color:var(--text-secondary);">합계</th>
+                  <th style="padding:5px 7px; text-align:right; color:var(--text-secondary);">평균</th>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                  <td style="padding:5px 7px;">기본급</td>
+                  <td style="padding:5px 7px; text-align:right;">175,500,000</td>
+                  <td style="padding:5px 7px; text-align:right;">3,510,000</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                  <td style="padding:5px 7px;">시간외수당</td>
+                  <td style="padding:5px 7px; text-align:right; color:var(--warning);">12,300,000 ⚠️</td>
+                  <td style="padding:5px 7px; text-align:right;">246,000</td>
+                </tr>
+                <tr>
+                  <td style="padding:5px 7px;">4대보험</td>
+                  <td style="padding:5px 7px; text-align:right; color:var(--negative);">-18,200,000</td>
+                  <td style="padding:5px 7px; text-align:right; color:var(--negative);">-364,000</td>
+                </tr>
+              </table>
+              <p style="font-size:0.7rem; color:var(--text-secondary); margin-top:10px;">
+                ⚠️ 시간외수당 합계 높음 → 상세 분석 필요
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NEW: WF③ - 보고서 요약 자동화 ========== -->
+      <section class="slide type-content" id="s17-report" aria-label="WF³ 보고서 요약 자동화">
+        <div class="slide-inner">
+          <span class="eyebrow animate">워크플로우 ③ · 보고서 요약</span>
+          <h2 class="animate d1">20페이지 보고서를<br><span style="color:var(--accent);">핵심 3줄로 요약</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="ba-wrap animate d2" style="margin-bottom:18px;">
+            <div class="ba-before">
+              <span class="ba-lbl-before">수동 작업</span>
+              <ul style="list-style:none; font-size:0.82rem; color:var(--text-secondary); line-height:2.2;">
+                <li>📄 20페이지 PDF 전문 읽기</li>
+                <li>🔍 중요 부분 찾아 형광펜</li>
+                <li>✍️ 요약본 직접 작성</li>
+                <li style="color:var(--negative); font-weight:600;">⏰ 소요: 30-40분</li>
+              </ul>
+            </div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-after">
+              <span class="ba-lbl-after">Claude Code</span>
+              <ul style="list-style:none; font-size:0.82rem; line-height:2.2;">
+                <li style="color:var(--positive);">✅ PDF 자동 전문 읽기</li>
+                <li style="color:var(--positive);">✅ 핵심 인사이트 3개 추출</li>
+                <li style="color:var(--positive);">✅ 액션 아이템 자동 도출</li>
+                <li style="color:var(--positive); font-weight:600;">⏰ 소요: 2-3분</li>
+              </ul>
+            </div>
+          </div>
+          <div class="grid-2 animate d3">
+            <div>
+              <div class="chat-prompt" style="margin-bottom:14px; font-size:0.82rem;">
+                <span class="chat-label">프롬프트 예시</span>
+                "이 분기 실적 보고서 PDF를 요약해줘. 핵심 인사이트 3개, 우려사항 1개, 액션 아이템 3개 형식으로 정리해줘."
+              </div>
+              <div class="callout-warn" style="font-size:0.82rem;">
+                <strong>추가 요청 가능:</strong><br><br>
+                "경영진 보고용으로 1페이지 슬라이드 만들어줘"<br>
+                "이 내용을 슬랙 메시지 형식으로 다시 써줘"<br>
+                "예산 관련 부분만 따로 정리해줘"
+              </div>
+            </div>
+            <div class="card" style="font-size:0.78rem;">
+              <p style="font-weight:700; margin-bottom:10px; color:var(--text-secondary); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em;">요약 결과 예시</p>
+              <div style="margin-bottom:12px;">
+                <p style="font-size:0.75rem; font-weight:700; color:var(--accent); margin-bottom:6px;">핵심 인사이트</p>
+                <ul style="list-style:none; font-size:0.72rem; line-height:1.9; color:var(--text-secondary);">
+                  <li>• 1분기 채용 목표 115% 달성</li>
+                  <li>• 퇴사율 전년 대비 2.3%p 감소</li>
+                  <li>• 복리후생 만족도 4.2 → 4.6 상승</li>
+                </ul>
+              </div>
+              <div style="margin-bottom:12px;">
+                <p style="font-size:0.75rem; font-weight:700; color:var(--warning); margin-bottom:6px;">우려사항</p>
+                <p style="font-size:0.72rem; color:var(--text-secondary); line-height:1.8;">• IT 부서 채용 지연 (목표 대비 60%)</p>
+              </div>
+              <div>
+                <p style="font-size:0.75rem; font-weight:700; color:var(--positive); margin-bottom:6px;">액션 아이템</p>
+                <ul style="list-style:none; font-size:0.72rem; line-height:1.9; color:var(--text-secondary);">
+                  <li>• IT 채용 예산 재배정 검토</li>
+                  <li>• 우수 사례 전사 공유 세션</li>
+                  <li>• 2분기 복리후생 개선안 실행</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -1557,6 +1922,383 @@
         </div>
       </section>
 
+      <!-- ========== NEW: 고급 프롬프팅 ① 컨텍스트 관리 ========== -->
+      <section class="slide type-content" id="s25-prompting-context" aria-label="고급 프롬프팅 컨텍스트 관리">
+        <div class="slide-inner">
+          <span class="eyebrow animate">고급 프롬프팅 기법 ① · 컨텍스트 관리</span>
+          <h2 class="animate d1">대화 이력을 <span style="color:var(--accent);">활용하는 법</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="grid-2 animate d2">
+            <div>
+              <div class="callout" style="margin-bottom:14px; font-size:0.83rem;">
+                <strong>Claude Code의 기억 능력</strong><br><br>
+                같은 프로젝트(폴더) 안에서는<br>
+                <span class="hl-pos">이전 대화 내용을 모두 기억</span>합니다.<br><br>
+                "아까 만든 파일을 수정해줘" 같은 지시가 가능합니다.
+              </div>
+              <div class="chat-prompt" style="font-size:0.78rem; margin-bottom:8px;">
+                <span class="chat-label">좋은 예시</span>
+                "아까 만든 엑셀 병합 스크립트에 날짜 필터 기능 추가해줘"
+              </div>
+              <div class="chat-prompt" style="font-size:0.78rem; background:rgba(244,63,94,0.08); border-color:rgba(244,63,94,0.2);">
+                <span class="chat-label" style="color:var(--negative);">나쁜 예시</span>
+                "merge_hr.py 파일의 line 23에 날짜 필터를 추가하고..." ← 불필요하게 구체적
+              </div>
+            </div>
+            <div>
+              <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:12px;">참조 파일 명시하기</p>
+              <ul style="list-style:none; font-size:0.82rem; line-height:2.2;">
+                <li style="display:flex; align-items:flex-start; gap:10px;"><span style="color:var(--positive);">✅</span><div>"CLAUDE.md 파일을 보고 이 프로젝트 구조를 이해한 후 작업해줘"</div></li>
+                <li style="display:flex; align-items:flex-start; gap:10px;"><span style="color:var(--positive);">✅</span><div>"README.md의 사용법을 참고해서 업데이트 버전 만들어줘"</div></li>
+                <li style="display:flex; align-items:flex-start; gap:10px;"><span style="color:var(--positive);">✅</span><div>"CHANGELOG.md를 기반으로 다음 버전 계획해줘"</div></li>
+              </ul>
+              <div class="callout-warn" style="margin-top:14px; font-size:0.82rem;">
+                <strong>팁:</strong> CLAUDE.md 파일에 프로젝트 맥락을 적어두면 Claude가 더 정확하게 작업합니다.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NEW: 고급 프롬프팅 ② 단계별 요청 ========== -->
+      <section class="slide type-content" id="s25-prompting-steps" aria-label="고급 프롬프팅 단계별 요청">
+        <div class="slide-inner">
+          <span class="eyebrow animate">고급 프롬프팅 기법 ② · 단계별 요청</span>
+          <h2 class="animate d1">한 번에 vs 나눠서: <span style="color:var(--accent);">언제 어떻게?</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="ba-wrap animate d2" style="margin-bottom:18px;">
+            <div class="ba-before">
+              <span class="ba-lbl-before">❌ 막막한 요청</span>
+              <div class="chat-prompt" style="font-size:0.75rem; padding:12px; margin-top:8px;">
+                "설문 데이터를 분석해서 리포트 만들고 차트도 넣고 부서별로 나눠서 이메일 형식으로 정리해줘"
+              </div>
+              <p style="font-size:0.75rem; color:var(--negative); margin-top:10px;">→ 한 번에 너무 많은 요구 → 결과가 애매해질 수 있음</p>
+            </div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-after">
+              <span class="ba-lbl-after">✅ 단계별 요청</span>
+              <div style="font-size:0.75rem; margin-top:8px; line-height:2;">
+                <strong>1단계:</strong> "설문 데이터 파악하고 알려줘"<br>
+                <strong>2단계:</strong> "부서별 평균 점수 엑셀로 만들어줘"<br>
+                <strong>3단계:</strong> "이걸 차트로 시각화해줘"<br>
+                <strong>4단계:</strong> "이메일 형식으로 요약해줘"
+              </div>
+              <p style="font-size:0.75rem; color:var(--positive); margin-top:10px;">→ 중간 결과 확인하며 방향 조정 가능</p>
+            </div>
+          </div>
+          <div class="grid-2 animate d3">
+            <div class="callout" style="font-size:0.82rem;">
+              <strong>한 번에 요청해도 되는 경우:</strong><br><br>
+              ✅ 이전에 같은 작업을 해본 적 있음<br>
+              ✅ 결과물 형태가 명확함<br>
+              ✅ 간단한 작업 (파일 변환, 정렬 등)
+            </div>
+            <div class="callout-warn" style="font-size:0.82rem;">
+              <strong>나눠서 요청해야 하는 경우:</strong><br><br>
+              ⚠️ 처음 해보는 복잡한 작업<br>
+              ⚠️ 중간 검증이 필요한 경우<br>
+              ⚠️ 막막해서 어디서부터 시작할지 모름
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NEW: 고급 프롬프팅 ③ 예시 기반 요청 ========== -->
+      <section class="slide type-content" id="s25-prompting-examples" aria-label="고급 프롬프팅 예시 기반">
+        <div class="slide-inner">
+          <span class="eyebrow animate">고급 프롬프팅 기법 ③ · Few-shot Prompting</span>
+          <h2 class="animate d1">샘플을 주면 <span style="color:var(--accent);">패턴을 학습</span>합니다</h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="grid-2 animate d2">
+            <div>
+              <div class="chat-prompt" style="margin-bottom:14px; font-size:0.78rem;">
+                <span class="chat-label">일반 요청 (모호함)</span>
+                "설문 결과를 보기 좋게 정리해줘"
+              </div>
+              <div class="chat-prompt" style="background:rgba(16,185,129,0.08); border-color:rgba(16,185,129,0.2); font-size:0.78rem;">
+                <span class="chat-label" style="color:var(--positive);">예시 기반 요청 (명확함)</span>
+                "설문 결과를 아래 샘플처럼 정리해줘:<br><br>
+                [부서] HR팀<br>
+                [평균 점수] 4.2 / 5.0<br>
+                [만족] 85% | [보통] 10% | [불만족] 5%<br>
+                [주요 피드백] 복리후생 개선 요청"
+              </div>
+            </div>
+            <div>
+              <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:12px;">활용 시나리오</p>
+              <ul style="list-style:none; font-size:0.82rem; line-height:2.2;">
+                <li style="display:flex; align-items:flex-start; gap:10px;"><div class="num-badge">1</div><div><strong>보고서 양식 통일</strong><br><span style="color:var(--text-secondary); font-size:0.75rem;">샘플 1개 주면 나머지도 같은 형식으로</span></div></li>
+                <li style="display:flex; align-items:flex-start; gap:10px;"><div class="num-badge">2</div><div><strong>이메일 톤 매칭</strong><br><span style="color:var(--text-secondary); font-size:0.75rem;">내가 쓴 이메일 예시 주면 그 스타일로 작성</span></div></li>
+                <li style="display:flex; align-items:flex-start; gap:10px;"><div class="num-badge">3</div><div><strong>데이터 변환 규칙</strong><br><span style="color:var(--text-secondary); font-size:0.75rem;">변환 전/후 예시 2-3개면 패턴 파악</span></div></li>
+              </ul>
+            </div>
+          </div>
+          <div class="callout animate d3" style="margin-top:16px; font-size:0.82rem;">
+            <strong>실전 팁:</strong> "이 예시를 참고해서" 대신 "이 예시와 똑같은 형식으로"라고 하면 더 정확합니다.
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NEW: 실전 케이스 ① 계약서 교차검증 ========== -->
+      <section class="slide type-content" id="s26-case-contract" aria-label="실전 케이스 계약서 교차검증">
+        <div class="slide-inner">
+          <span class="eyebrow animate">실전 케이스 스터디 ① · PDF 계약서 자동 비교</span>
+          <h2 class="animate d1">10개 계약서 <span style="color:var(--accent);">교차검증 도구</span> 만들기</h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="animate d2" style="margin-bottom:18px;">
+            <div class="quote-block card">
+              <div class="quote-mark">"</div>
+              <p class="quote-text" style="font-size:1rem;">신규 계약 체결 전에 기존 계약서들과 조건을 비교해야 했다. 위약금·계약기간·갱신조건이 다르면 플래그가 떠야 하고, 이상치 탐지도 필요했다. 개발자에게 부탁하기엔 애매한 크기의 작업이었다.</p>
+            </div>
+          </div>
+          <div class="flow-row animate d3" style="margin-bottom:18px;">
+            <div class="flow-step">
+              <div class="flow-step-icon">💬</div>
+              <div class="flow-step-title">Phase 1</div>
+              <div class="flow-step-desc">PRD 작성<br>인터뷰 방식</div>
+            </div>
+            <div class="flow-step" style="background:rgba(59,130,246,0.07);">
+              <div class="flow-step-icon">📄</div>
+              <div class="flow-step-title">Phase 2</div>
+              <div class="flow-step-desc">PDF 파싱<br>스크립트 생성</div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-step-icon">📊</div>
+              <div class="flow-step-title">Phase 3</div>
+              <div class="flow-step-desc">비교 로직<br>구현</div>
+            </div>
+            <div class="flow-step" style="background:rgba(59,130,246,0.07);">
+              <div class="flow-step-icon">⚠️</div>
+              <div class="flow-step-title">Phase 4</div>
+              <div class="flow-step-desc">이상치 탐지<br>알고리즘</div>
+            </div>
+            <div class="flow-step" style="border-color:rgba(16,185,129,0.3); background:rgba(16,185,129,0.06);">
+              <div class="flow-step-icon">🌐</div>
+              <div class="flow-step-title">Phase 5</div>
+              <div class="flow-step-desc">웹 UI<br>HTML 도구</div>
+            </div>
+          </div>
+          <div class="grid-2 animate d4">
+            <div class="card" style="font-size:0.78rem;">
+              <p style="font-weight:700; margin-bottom:10px;">결과물</p>
+              <ul style="list-style:none; line-height:2; font-size:0.75rem;">
+                <li>✅ contract_analyzer.html (단일 파일)</li>
+                <li>✅ PDF 업로드 → 자동 추출 → 비교표 생성</li>
+                <li>✅ 위약금 20% 초과 시 경고</li>
+                <li>✅ 평균 대비 ±30% 이상 차이 플래그</li>
+                <li>✅ 차트로 시각화 (Chart.js)</li>
+              </ul>
+            </div>
+            <div class="callout" style="font-size:0.82rem;">
+              <strong>총 소요 시간: 약 2시간</strong><br><br>
+              • 인터뷰 & PRD: 30분<br>
+              • 초기 구현: 40분<br>
+              • 오류 수정 & 보완: 30분<br>
+              • UI 개선: 20분<br><br>
+              <span style="color:var(--text-secondary); font-size:0.75rem;">개발자 없이도 실무에서 바로 쓸 수 있는 도구가 탄생했습니다.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NEW: 실전 케이스 ② 연차 관리 시스템 ========== -->
+      <section class="slide type-content" id="s26-case-leave" aria-label="실전 케이스 연차 관리">
+        <div class="slide-inner">
+          <span class="eyebrow animate">실전 케이스 스터디 ② · 연차 관리 자동화</span>
+          <h2 class="animate d1">사용내역 + 잔여일 + 알림 <span style="color:var(--accent);">통합 시스템</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="grid-2 animate d2" style="margin-bottom:18px;">
+            <div>
+              <div class="callout-warn" style="margin-bottom:14px; font-size:0.83rem;">
+                <strong>기존 고통 포인트</strong><br><br>
+                ❌ 연차 사용 현황 엑셀 수동 업데이트<br>
+                ❌ 잔여일 계산 실수 (발생일·소멸일 계산)<br>
+                ❌ 소멸 임박자 수동 체크<br>
+                ❌ 부서별 현황 집계 반복 작업
+              </div>
+              <div class="chat-prompt" style="font-size:0.78rem;">
+                <span class="chat-label">최초 프롬프트</span>
+                "직원 연차 관리 시스템을 웹 도구로 만들고 싶어. 사용내역 추가하면 자동으로 잔여일 계산되고, 소멸 임박자 알림 기능도 필요해. 인터뷰해줘."
+              </div>
+            </div>
+            <div>
+              <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:12px;">완성된 기능</p>
+              <ul style="list-style:none; font-size:0.82rem; line-height:2.2;">
+                <li style="display:flex; align-items:flex-start; gap:10px;"><span style="color:var(--positive);">✅</span><div>직원별 연차 발생일 자동 계산</div></li>
+                <li style="display:flex; align-items:flex-start; gap:10px;"><span style="color:var(--positive);">✅</span><div>사용 내역 입력 → 잔여일 실시간 갱신</div></li>
+                <li style="display:flex; align-items:flex-start; gap:10px;"><span style="color:var(--positive);">✅</span><div>소멸 임박(30일 이내) 빨간색 표시</div></li>
+                <li style="display:flex; align-items:flex-start; gap:10px;"><span style="color:var(--positive);">✅</span><div>부서별 집계 자동 생성</div></li>
+                <li style="display:flex; align-items:flex-start; gap:10px;"><span style="color:var(--positive);">✅</span><div>CSV 내보내기 (백업용)</div></li>
+              </ul>
+            </div>
+          </div>
+          <div class="grid-2 animate d3">
+            <div class="card" style="font-size:0.78rem;">
+              <p style="font-weight:700; margin-bottom:10px;">기술 스택 (Claude가 선택)</p>
+              <ul style="list-style:none; line-height:2; font-size:0.75rem;">
+                <li>• 단일 HTML 파일 (JavaScript)</li>
+                <li>• localStorage로 데이터 저장</li>
+                <li>• 날짜 계산 로직 내장</li>
+                <li>• 다크/라이트 테마 토글</li>
+                <li>• 반응형 테이블 (모바일 대응)</li>
+              </ul>
+            </div>
+            <div class="callout" style="font-size:0.82rem;">
+              <strong>실무 임팩트</strong><br><br>
+              • 주 1회 업데이트 작업 <span class="hl-pos">20분 → 2분</span><br>
+              • 소멸 알림 놓침 <span class="hl-pos">0건</span> (이전 월 2-3건)<br>
+              • 팀원들도 직접 사용 (권한 설정으로 열람만 가능)<br><br>
+              <span style="color:var(--text-secondary); font-size:0.75rem;">서버 없이 파일 하나로 모든 기능 구현</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NEW: 오류 대응 ① 주요 오류 유형 ========== -->
+      <section class="slide type-content" id="s27-errors" aria-label="오류 대응 가이드">
+        <div class="slide-inner">
+          <span class="eyebrow animate">오류 대응 가이드 ① · 주요 오류 유형</span>
+          <h2 class="animate d1">막히는 순간, <span style="color:var(--accent);">이렇게 대응하세요</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="error-grid animate d2" style="margin-bottom:18px;">
+            <div class="error-card">
+              <div class="error-card-icon">📁</div>
+              <div class="error-card-title">파일을 못 읽는 경우</div>
+              <div class="error-card-desc">권한 문제, 경로 오류, 인코딩 문제</div>
+              <div class="error-card-fix">→ "이 경로의 파일을 읽어줘 [경로 복사]"</div>
+            </div>
+            <div class="error-card">
+              <div class="error-card-icon">❓</div>
+              <div class="error-card-title">결과가 기대와 다른 경우</div>
+              <div class="error-card-desc">요구사항이 모호했거나 맥락 부족</div>
+              <div class="error-card-fix">→ "내가 원한 건 이거야 [구체적 설명]"</div>
+            </div>
+            <div class="error-card">
+              <div class="error-card-icon">⏸️</div>
+              <div class="error-card-title">중간에 작업이 멈춘 경우</div>
+              <div class="error-card-desc">토큰 한계, 복잡도 초과, 외부 API 오류</div>
+              <div class="error-card-fix">→ "이어서 계속해줘" 또는 "여기까지만 먼저"</div>
+            </div>
+            <div class="error-card">
+              <div class="error-card-icon">🐛</div>
+              <div class="error-card-title">코드가 작동 안 하는 경우</div>
+              <div class="error-card-desc">문법 오류, 라이브러리 버전, 환경 문제</div>
+              <div class="error-card-fix">→ 스크린샷 + "이 오류 해결해줘"</div>
+            </div>
+          </div>
+          <div class="callout animate d3" style="font-size:0.82rem;">
+            <strong>황금 규칙:</strong> 막혀도 <strong>멈추지 마세요.</strong> 오류를 그대로 Claude에게 던지면 대부분 해결됩니다. "이거 될까?"가 아니라 <strong>"일단 시켜보자"</strong>가 정답입니다.
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NEW: 오류 대응 ② 디버깅 템플릿 ========== -->
+      <section class="slide type-content" id="s27-debug" aria-label="디버깅 프롬프트 템플릿">
+        <div class="slide-inner">
+          <span class="eyebrow animate">오류 대응 가이드 ② · 디버깅 템플릿</span>
+          <h2 class="animate d1">오류 보고 <span style="color:var(--accent);">프롬프트 템플릿</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="grid-2 animate d2">
+            <div class="template-item">
+              <div class="template-header">
+                <span class="template-icon">📸</span>
+                <span class="template-title">스크린샷 활용</span>
+              </div>
+              <div class="template-desc">가장 효과적인 방법. 에러 화면을 캡처해서 그대로 첨부.</div>
+              <div class="template-code">
+                [스크린샷 첨부]<br>
+                "이 오류가 나는데 고쳐줘"
+              </div>
+            </div>
+            <div class="template-item">
+              <div class="template-header">
+                <span class="template-icon">📄</span>
+                <span class="template-title">로그 복사</span>
+              </div>
+              <div class="template-desc">터미널 오류 메시지를 그대로 복사해서 전달.</div>
+              <div class="template-code">
+                "실행했더니 이런 오류가 나:<br>
+                [오류 메시지 전문 복사]<br>
+                해결해줘"
+              </div>
+            </div>
+            <div class="template-item">
+              <div class="template-header">
+                <span class="template-icon">🔍</span>
+                <span class="template-title">상황 설명</span>
+              </div>
+              <div class="template-desc">무엇을 하려다 막혔는지 맥락 제공.</div>
+              <div class="template-code">
+                "엑셀 병합 스크립트 실행했는데<br>
+                3번째 파일에서 멈춰.<br>
+                다른 파일은 문제없었어"
+              </div>
+            </div>
+            <div class="template-item">
+              <div class="template-header">
+                <span class="template-icon">🎯</span>
+                <span class="template-title">기대 결과 명시</span>
+              </div>
+              <div class="template-desc">원하는 결과물을 구체적으로 설명.</div>
+              <div class="template-code">
+                "지금은 컬럼 A만 나오는데,<br>
+                컬럼 A·B·C가 모두 나와야 해"
+              </div>
+            </div>
+          </div>
+          <div class="callout-warn animate d3" style="margin-top:16px; font-size:0.82rem;">
+            <strong>중요:</strong> 3-4번 시도해도 안 되면 "처음부터 다른 방식으로 다시 만들어줘"라고 요청하세요. 가끔 접근 방법 자체를 바꾸는 게 더 빠릅니다.
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NEW: 팀 협업 활용법 ========== -->
+      <section class="slide type-content" id="s28-collab" aria-label="팀 협업 활용법">
+        <div class="slide-inner">
+          <span class="eyebrow animate">팀 협업 활용법</span>
+          <h2 class="animate d1">결과물 공유와 <span style="color:var(--accent);">노하우 축적</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="grid-2 animate d2" style="margin-bottom:18px;">
+            <div>
+              <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:12px;">공유 방법</p>
+              <ul style="list-style:none; font-size:0.82rem; line-height:2.2;">
+                <li style="display:flex; align-items:flex-start; gap:10px;"><div class="num-badge">1</div><div><strong>폴더 통째로 압축</strong><br><span style="color:var(--text-secondary); font-size:0.75rem;">스크립트 + README + 샘플 파일 모두 포함</span></div></li>
+                <li style="display:flex; align-items:flex-start; gap:10px;"><div class="num-badge">2</div><div><strong>슬랙/이메일 전송</strong><br><span style="color:var(--text-secondary); font-size:0.75rem;">HTML 도구는 파일 하나만 전송</span></div></li>
+                <li style="display:flex; align-items:flex-start; gap:10px;"><div class="num-badge">3</div><div><strong>README에 사용법 명시</strong><br><span style="color:var(--text-secondary); font-size:0.75rem;">받은 사람이 바로 쓸 수 있도록</span></div></li>
+              </ul>
+            </div>
+            <div>
+              <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:12px;">프롬프트 템플릿 라이브러리</p>
+              <div class="folder-vis">
+                <div class="folder-name">📁 팀_프롬프트_라이브러리/</div>
+                <div class="folder-file">📝 엑셀병합_프롬프트.txt</div>
+                <div class="folder-file">📝 PDF분석_프롬프트.txt</div>
+                <div class="folder-file">📝 웹도구PRD_템플릿.md</div>
+                <div class="folder-file">📝 README_템플릿.md</div>
+              </div>
+              <p style="font-size:0.78rem; color:var(--text-secondary); margin-top:12px; line-height:1.8;">
+                잘 작동한 프롬프트를 텍스트 파일로 저장해두면<br>
+                팀원들이 그대로 복사해서 사용 가능합니다.
+              </p>
+            </div>
+          </div>
+          <div class="grid-2 animate d3">
+            <div class="callout" style="font-size:0.82rem;">
+              <strong>CHANGELOG로 히스토리 관리</strong><br><br>
+              버전별 변경사항을 CHANGELOG.md에 기록하면<br>
+              나중에 업그레이드할 때 Claude가 맥락을 이해하고<br>
+              이어서 작업할 수 있습니다.
+            </div>
+            <div class="callout-warn" style="font-size:0.82rem;">
+              <strong>보안 주의사항</strong><br><br>
+              • 실제 개인정보가 담긴 파일은 샘플로 대체<br>
+              • API 키·비밀번호는 절대 코드에 하드코딩 금지<br>
+              • 공유 전 민감 정보 제거 확인
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ========== SLIDE 15: BREAK ========== -->
       <section class="slide type-break" id="s15" aria-label="브레이크">
         <div class="slide-inner" style="text-align:center;">
@@ -1712,6 +2454,197 @@
         </div>
       </section>
 
+      <!-- ========== NEW: 실습 체크리스트 ========== -->
+      <section class="slide type-content" id="s29-checklist" aria-label="실습 체크리스트">
+        <div class="slide-inner">
+          <span class="eyebrow animate">실습 체크리스트</span>
+          <h2 class="animate d1">시작 전·중·후 <span style="color:var(--accent);">확인사항</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="grid-3 animate d2">
+            <div class="card">
+              <p style="font-size:0.82rem; font-weight:700; margin-bottom:12px; color:var(--accent);">✅ 시작 전 준비</p>
+              <ul style="list-style:none; font-size:0.75rem; line-height:2;">
+                <li>□ Claude Code 설치 완료</li>
+                <li>□ 작업용 폴더 생성</li>
+                <li>□ 필요한 파일 준비</li>
+                <li>□ 해결할 고통 포인트 명확히</li>
+                <li>□ 원하는 결과물 이미지화</li>
+              </ul>
+            </div>
+            <div class="card">
+              <p style="font-size:0.82rem; font-weight:700; margin-bottom:12px; color:var(--warning);">⚙️ 진행 중 확인</p>
+              <ul style="list-style:none; font-size:0.75rem; line-height:2;">
+                <li>□ 인터뷰 방식으로 시작</li>
+                <li>□ 중간 결과 확인 후 진행</li>
+                <li>□ 오류 발생 시 스크린샷</li>
+                <li>□ README 문서 생성 요청</li>
+                <li>□ CHANGELOG 버전 기록</li>
+              </ul>
+            </div>
+            <div class="card">
+              <p style="font-size:0.82rem; font-weight:700; margin-bottom:12px; color:var(--positive);">✨ 완료 후 점검</p>
+              <ul style="list-style:none; font-size:0.75rem; line-height:2;">
+                <li>□ 기본 기능 테스트</li>
+                <li>□ 다양한 입력값으로 검증</li>
+                <li>□ README 읽고 사용법 이해</li>
+                <li>□ 팀원에게 공유 (필요시)</li>
+                <li>□ 개선사항 메모해두기</li>
+              </ul>
+            </div>
+          </div>
+          <div class="callout animate d3" style="margin-top:18px; font-size:0.82rem;">
+            <strong>실습 목표:</strong> 완벽한 결과물보다는 <strong>"직접 만들어본 경험"</strong>이 중요합니다. v0.1이 나오면 성공입니다!
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NEW: 템플릿 갤러리 ========== -->
+      <section class="slide type-content" id="s29-templates" aria-label="템플릿 갤러리">
+        <div class="slide-inner">
+          <span class="eyebrow animate">템플릿 갤러리</span>
+          <h2 class="animate d1">바로 쓸 수 있는 <span style="color:var(--accent);">프롬프트 템플릿</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="animate d2" style="margin-bottom:18px;">
+            <div class="template-item">
+              <div class="template-header">
+                <span class="template-icon">📝</span>
+                <span class="template-title">PRD 작성 요청 템플릿</span>
+              </div>
+              <div class="template-desc">기획서를 만들 때 사용하는 프롬프트</div>
+              <div class="template-code">
+                "[내 업무 고통 포인트 설명]<br><br>
+                이 문제를 해결하는 웹 도구를 만들고 싶어.<br>
+                필요한 정보를 인터뷰해서 PRD를 작성해줘.<br>
+                PRD에는 배경, 기능 목록, UI 명세, 완성 스펙, 제약사항을 포함해줘."
+              </div>
+            </div>
+          </div>
+          <div class="grid-2 animate d3">
+            <div class="template-item">
+              <div class="template-header">
+                <span class="template-icon">⚙️</span>
+                <span class="template-title">구현 요청 템플릿</span>
+              </div>
+              <div class="template-desc">PRD 기반으로 실제 도구 만들기</div>
+              <div class="template-code">
+                "이 PRD를 기반으로 단일 HTML 파일로<br>
+                완성된 도구를 만들어줘.<br>
+                외부 서버 없이 브라우저에서 바로 실행 가능해야 하고,<br>
+                README.md와 CHANGELOG.md도 같이 만들어줘."
+              </div>
+            </div>
+            <div class="template-item">
+              <div class="template-header">
+                <span class="template-icon">📄</span>
+                <span class="template-title">README 템플릿</span>
+              </div>
+              <div class="template-desc">문서화 요청 시 사용</div>
+              <div class="template-code">
+                "README.md를 만들어줘. 포함 내용:<br>
+                • 이 도구가 하는 일<br>
+                • 사용 방법 (단계별)<br>
+                • 필요한 라이브러리<br>
+                • 주의사항"
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NEW: 실패 사례와 해결법 ========== -->
+      <section class="slide type-content" id="s29-failures" aria-label="실패 사례와 해결법">
+        <div class="slide-inner">
+          <span class="eyebrow animate">실패 사례와 해결법</span>
+          <h2 class="animate d1">흔한 실수 <span style="color:var(--accent);">Top 5</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="animate d2">
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div class="hurdle-tip" style="border-left:3px solid var(--negative);">
+                <span class="hurdle-tip-icon">❌</span>
+                <div>
+                  <strong>실수 1: 한 번에 너무 많이 요구</strong><br>
+                  <span style="color:var(--text-secondary); font-size:0.8rem;">해결: 단계별로 나눠서 요청. "일단 기본 기능만 먼저"</span>
+                </div>
+              </div>
+              <div class="hurdle-tip" style="border-left:3px solid var(--negative);">
+                <span class="hurdle-tip-icon">❌</span>
+                <div>
+                  <strong>실수 2: 오류 나면 바로 포기</strong><br>
+                  <span style="color:var(--text-secondary); font-size:0.8rem;">해결: 오류 화면 캡처 → "이 오류 해결해줘" 반복. 3-4번은 시도</span>
+                </div>
+              </div>
+              <div class="hurdle-tip" style="border-left:3px solid var(--negative);">
+                <span class="hurdle-tip-icon">❌</span>
+                <div>
+                  <strong>실수 3: 맥락 없이 요구</strong><br>
+                  <span style="color:var(--text-secondary); font-size:0.8rem;">해결: "이 파일들이 뭔지 먼저 파악하고 알려줘" 먼저 요청</span>
+                </div>
+              </div>
+              <div class="hurdle-tip" style="border-left:3px solid var(--negative);">
+                <span class="hurdle-tip-icon">❌</span>
+                <div>
+                  <strong>실수 4: 중간 결과 확인 안 함</strong><br>
+                  <span style="color:var(--text-secondary); font-size:0.8rem;">해결: 각 단계마다 결과 확인 후 진행. 방향 틀어지면 바로 수정</span>
+                </div>
+              </div>
+              <div class="hurdle-tip" style="border-left:3px solid var(--negative);">
+                <span class="hurdle-tip-icon">❌</span>
+                <div>
+                  <strong>실수 5: 완벽주의</strong><br>
+                  <span style="color:var(--text-secondary); font-size:0.8rem;">해결: v0.1부터 시작. 쓰면서 개선. "처음엔 단순해도 괜찮아"</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="callout-warn animate d3" style="margin-top:18px; font-size:0.82rem;">
+            <strong>핵심 원칙:</strong> "될까?"가 아니라 <strong>"일단 시켜보자"</strong>. 막혀도 멈추지 말고 계속 던지면 해결됩니다.
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NEW: 리소스와 다음 단계 ========== -->
+      <section class="slide type-content" id="s29-resources" aria-label="리소스와 다음 단계">
+        <div class="slide-inner">
+          <span class="eyebrow animate">다음 단계</span>
+          <h2 class="animate d1">여기서 <span style="color:var(--accent);">더 나아가기</span></h2>
+          <div class="accent-bar animate d2"></div>
+          <div class="grid-2 animate d2" style="margin-bottom:18px;">
+            <div>
+              <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:12px;">학습 로드맵</p>
+              <ul style="list-style:none; font-size:0.82rem; line-height:2.2;">
+                <li style="display:flex; align-items:flex-start; gap:10px;"><div class="num-badge" style="background:var(--positive);">1</div><div><strong>1-2주차:</strong> 기본 워크플로우 익히기<br><span style="color:var(--text-secondary); font-size:0.75rem;">엑셀 자동화, 설문 취합, PDF 분석</span></div></li>
+                <li style="display:flex; align-items:flex-start; gap:10px;"><div class="num-badge" style="background:var(--accent);">2</div><div><strong>3-4주차:</strong> 웹 도구 제작<br><span style="color:var(--text-secondary); font-size:0.75rem;">PRD 작성 → HTML 도구 3개 만들기</span></div></li>
+                <li style="display:flex; align-items:flex-start; gap:10px;"><div class="num-badge" style="background:var(--accent-secondary);">3</div><div><strong>5주차 이후:</strong> 고급 활용<br><span style="color:var(--text-secondary); font-size:0.75rem;">API 연동, 대시보드, 자동화 파이프라인</span></div></li>
+              </ul>
+            </div>
+            <div>
+              <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:12px;">참고 리소스</p>
+              <div class="card" style="font-size:0.78rem; line-height:2;">
+                <div style="margin-bottom:8px;">
+                  <strong>공식 문서</strong><br>
+                  <span style="color:var(--text-secondary); font-size:0.72rem;">Claude Code 공식 가이드</span>
+                </div>
+                <div style="margin-bottom:8px;">
+                  <strong>커뮤니티</strong><br>
+                  <span style="color:var(--text-secondary); font-size:0.72rem;">사용자 포럼, Slack 채널</span>
+                </div>
+                <div style="margin-bottom:8px;">
+                  <strong>예제 모음</strong><br>
+                  <span style="color:var(--text-secondary); font-size:0.72rem;">실전 케이스 라이브러리</span>
+                </div>
+                <div>
+                  <strong>프롬프트 템플릿</strong><br>
+                  <span style="color:var(--text-secondary); font-size:0.72rem;">워크플로우별 프롬프트 모음</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="callout animate d3" style="font-size:0.82rem;">
+            <strong>Q&A 채널:</strong> 막히는 부분이 있으면 팀 슬랙 #claude-code 채널에 질문하세요. 같은 고민을 한 동료가 답해줄 겁니다.
+          </div>
+        </div>
+      </section>
+
       <!-- ========== SLIDE 20: FINAL MESSAGE ========== -->
       <section class="slide type-title" id="s20" aria-label="마지막 메시지">
         <div class="slide-inner" style="text-align:center;">
@@ -1749,7 +2682,7 @@
     <button class="nav-btn" onclick="prevSlide()" id="prevBtn" aria-label="이전 슬라이드" disabled>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
-    <span class="slide-counter" id="slideCounter">1 / 30</span>
+    <span class="slide-counter" id="slideCounter">1 / 52</span>
     <button class="nav-btn" onclick="nextSlide()" id="nextBtn" aria-label="다음 슬라이드">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
     </button>
